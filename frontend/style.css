@@ -1,0 +1,424 @@
+:root {
+    --obsidian: #0A0A0A;
+    --gold: #C5A059;
+    --white: #FFFFFF;
+    --glass: rgba(10, 10, 10, 0.8);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--obsidian);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .luxury-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+header.scrolled {
+    background: var(--glass);
+    padding: 1rem 4rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.cart-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    background: var(--gold);
+    color: var(--obsidian);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -15px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Product Grid */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.product-info {
+    padding: 1.5rem 0;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+
+.btn-add {
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    transition: var(--transition);
+}
+
+.btn-add:hover {
+    background: var(--gold);
+    color: var(--obsidian);
+}
+
+/* Cart Drawer */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: var(--obsidian);
+    z-index: 1001;
+    transition: var(--transition);
+    padding: 4rem 2rem;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    border-left: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+}
+
+.close-cart {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.cart-items {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.cart-footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.btn-checkout {
+    width: 100%;
+    background: var(--gold);
+    color: var(--obsidian);
+    border: none;
+    padding: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+/* Concierge Chat */
+.chat-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: var(--transition);
+}
+
+.chat-fab:hover {
+    transform: translateY(-5px);
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 350px;
+    height: 500px;
+    background: var(--obsidian);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-window.open {
+    display: flex;
+}
+
+.chat-header-bar {
+    background: var(--gold);
+    padding: 1rem;
+    color: var(--obsidian);
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message {
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    max-width: 80%;
+    font-size: 0.9rem;
+}
+
+.message.bot {
+    background: rgba(197, 160, 89, 0.1);
+    align-self: flex-start;
+    border-left: 2px solid var(--gold);
+}
+
+.message.user {
+    background: rgba(255, 255, 255, 0.05);
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.chat-input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 0.5rem;
+    outline: none;
+}
+
+.chat-send {
+    background: var(--gold);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Editorial Style */
+.editorial-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.editorial-img {
+    flex: 1;
+    height: 600px;
+    object-fit: cover;
+}
+
+.editorial-text {
+    flex: 1;
+}
+
+/* Forms */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 0.8rem 0;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-bottom-color: var(--gold);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gold);
+    color: var(--obsidian);
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 2rem;
+}

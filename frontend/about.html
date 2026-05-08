@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | AURAFASHIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="scrolled">
+        <a href="index.html" class="logo">AURAFASHIONS</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <span>CART</span>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="editorial-section fade-in">
+            <div class="editorial-text">
+                <p style="color: var(--gold); letter-spacing: 4px; margin-bottom: 1rem;">OUR STORY</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 2rem;">A Legacy of Quiet Luxury</h1>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">
+                    Founded in the heart of Milan and refined by global perspectives, AURAFASHIONS represents the intersection of artisanal heritage and contemporary minimalism.
+                </p>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8);">
+                    We believe that luxury is not loud; it is a whisper of silk against skin, the weight of hand-sourced cashmere, and the silhouette that speaks before you do. Every garment is a testament to the artisans who dedicate their lives to the craft.
+                </p>
+            </div>
+            <img src="about.jpg" alt="Editorial" class="editorial-img">
+        </section>
+
+        <section style="margin-top: 10rem; text-align: center;" class="fade-in">
+            <h2 style="font-size: 2.5rem; margin-bottom: 4rem;">The Pillars of Our House</h2>
+            <div class="grid">
+                <div>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">SUSTAINABILITY</h3>
+                    <p>Ethical sourcing of materials from heritage mills across Italy and Scotland.</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">ARTISTRY</h3>
+                    <p>Each piece is hand-finished by master tailors with decades of experience.</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">EXCLUSIVE</h3>
+                    <p>Limited runs to ensure the uniqueness of your personal collection.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shared Components (Cart Drawer & Chat) -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>YOUR COLLECTION</h3>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div id="cart-items-list" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-row"><span>TOTAL</span><span id="cart-total">$0</span></div>
+            <a href="checkout.html" class="btn-checkout">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <div class="chat-fab" id="chat-fab">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header-bar">
+            <span>Aura Concierge</span>
+            <span id="close-chat" style="cursor:pointer">&times;</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">How may I assist your exploration of our brand's heritage?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Inquire...">
+            <button id="chat-send" class="chat-send">SEND</button>
+        </div>
+    </div>
+
+    <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 2px;">&copy; 2026 AURAFASHIONS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

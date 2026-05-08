@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAFASHIONS | Luxury Redefined</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">AURAFASHIONS</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <span>CART</span>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero" id="hero-section">
+        <div class="hero-content fade-in">
+            <p>Spring / Summer 2026</p>
+            <h1>The Essence of Aura</h1>
+            <a href="#collection" class="btn-add" style="text-decoration: none; border-color: white; color: white;">Explore Collection</a>
+        </div>
+    </section>
+
+    <main class="container" id="collection">
+        <div style="text-align: center; margin-bottom: 6rem;" class="fade-in">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">The Curated Edit</h2>
+            <p style="color: var(--gold); letter-spacing: 2px;">TIMELESS PIECES FOR THE MODERN SOUL</p>
+        </div>
+        
+        <div id="product-grid" class="grid">
+            <!-- Products loaded via JS -->
+        </div>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>YOUR COLLECTION</h3>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div id="cart-items-list" class="cart-items">
+            <!-- Items loaded via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>TOTAL</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <a href="checkout.html" class="btn-checkout">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Concierge Chat -->
+    <div class="chat-fab" id="chat-fab">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </div>
+
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header-bar">
+            <span>Aura Concierge</span>
+            <span id="close-chat" style="cursor:pointer">&times;</span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">Good evening. I am the Aura Concierge. How may I assist your curation today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Inquire about materials, sizing...">
+            <button id="chat-send" class="chat-send">SEND</button>
+        </div>
+    </div>
+
+    <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 2px;">&copy; 2026 AURAFASHIONS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update hero image
+        document.getElementById('hero-section').style.backgroundImage = "url('hero.jpg')";
+    </script>
+</body>
+</html>

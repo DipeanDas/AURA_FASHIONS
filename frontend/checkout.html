@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AURAFASHIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="scrolled">
+        <a href="index.html" class="logo">AURAFASHIONS</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <span>CART</span>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 6rem;" class="fade-in">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Finalize Acquisition</h1>
+            <p style="color: var(--gold); letter-spacing: 2px;">SECURE CHECKOUT</p>
+        </div>
+
+        <div class="grid fade-in">
+            <div style="background: rgba(255,255,255,0.02); padding: 3rem; border: 1px solid rgba(255,255,255,0.05);">
+                <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Order Summary</h2>
+                <div id="checkout-items">
+                    <!-- Loaded via JS -->
+                </div>
+                <div style="margin-top: 2rem; border-top: 1px solid var(--gold); padding-top: 1rem; display: flex; justify-content: space-between; font-size: 1.5rem;">
+                    <span>TOTAL</span>
+                    <span id="checkout-total">$0</span>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.8rem; color: rgba(255,255,255,0.5);">Complimentary white-glove shipping included.</p>
+            </div>
+
+            <form id="payment-form" class="contact-form">
+                <h2 style="font-size: 1.5rem; margin-bottom: 2rem;">Secure Payment</h2>
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" id="card-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div style="display: flex; gap: 2rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label>Expiry Date</label>
+                        <input type="text" placeholder="MM / YY" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label>CVV</label>
+                        <input type="password" placeholder="***" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">Authenticate Payment</button>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.7rem; color: rgba(255,255,255,0.3);">
+                    Encrypted by AURA Secure Systems.
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); letter-spacing: 2px;">&copy; 2026 AURAFASHIONS. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
